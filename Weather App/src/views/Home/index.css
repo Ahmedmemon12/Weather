@@ -1,0 +1,84 @@
+.container {
+    background-image: linear-gradient(#4a94d1, #b0d1e2);
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main {
+    display: flex;
+    width: 80vw;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.secondPart {
+    background-image: linear-gradient(#2c5d84, #6d828e);
+    height: 80vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Search {
+    background-color: #a9cee1;
+    cursor: pointer;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.topItem {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    width: 31vw;
+}
+
+.topItem>div>input {
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.517);
+    width: 300px;
+    margin-top: 20px;
+    color: white;
+}
+
+.topItem>div>input::placeholder {
+    color: rgba(255, 255, 255, 0.534);
+}
+.topItem>div>input:focus {
+    border: 2px rgba(255, 255, 255, 0.661) solid;
+    border-radius: 0px;
+    outline: #4a94d1;
+    height: 7vh;
+}
+.image > img{
+    height: 300px;
+    width: 300px;
+}
+.image{
+    display: flex;
+    flex-direction: column;
+}
+.image > span{
+    font-size: 20px;
+    font-weight: 900;
+}
+.InfoDiv{
+    display: flex;
+}
+.bottomItem{
+    height: 65vh;
+    width: 85%;
+}
+.first{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
