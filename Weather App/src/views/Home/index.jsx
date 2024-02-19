@@ -4,7 +4,7 @@ import fetchApi from '../../config/api'
 import { addLocation } from '../../config/firebase'
 
 export default function Home() {
-  const [Location, setLocation] = useState('')
+  const [Location, setLocation] = useState('karachi')
   const [info, setInfo] = useState([])
 
   const handleSearch = async () => {
@@ -20,17 +20,21 @@ export default function Home() {
     <div className='main'>
       <div className="container">
         <div className="image">
+          {info.current ? 
           <img src={info?.current?.condition?.icon} alt="" />
+          :
+          <></>
+        }
           <span>{info?.current?.condition?.text}</span>
 
         </div>
         <div className="infoDiv">
           {info?.current?.temp_c !== undefined ? (
-            <h1>
+            <h1 className='mainHead'>
               {info.current.temp_c + '°'}
             </h1>) : (<></>)}
 
-          <h1>{info?.location?.name}</h1>
+          <h1 className='mainHead'>{info?.location?.name}</h1>
           <h4>{info?.location?.country}</h4>
         </div>
       </div>
@@ -53,27 +57,14 @@ export default function Home() {
         <hr />
         <div className="bottomItem">
           <div className="first">
-            <h1>{info?.location?.name}</h1>
-            <h1>{info?.location?.name}</h1>
+            <p>{info.current ? 'Wind Speed':<></>}</p>
+            <p>{info.current ? info?.current?.wind_kph + ' KPH' : <></>}</p>
           </div>
 
           <div className="first">
-          <h1>{info?.location?.name}</h1>
-          <h1>{info?.location?.name}</h1>
+            <p>{info.current ? 'Wind Direction':<></>}</p>
+            <p>{info.current ? info?.current?.wind_degree + 'deg' : <></>}</p>
           </div>
-          
-          <div className="first">
-          <h1>{info?.location?.name}</h1>
-          <h1>{info?.location?.name}</h1>
-          </div>
-
-          <div className="first">
-          <h1>{info?.location?.name}</h1>
-          <h1>{info?.location?.name}</h1>
-        
-          </div>
-
-
         </div>
       </div>
     </div>

@@ -36,8 +36,9 @@ export async function addLocation(location) {
 
 export async function getResult(id) {
     const querySnapshot = await getDocs(collection(db, "location"));
-    
+    const products = []
     querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
+      products.push({ id: doc.id, ...doc.data() })
     });
+    return products
 }
